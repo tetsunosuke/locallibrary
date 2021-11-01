@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  {% load static %}
+  <img src="{% static 'images/o0400041911756434001.jpg' %}" alt="mu">
+  <h1>Bok List</h1>
+  {% if book_list %}
+  <ul>
+    {% for book in book_list %}
+
+     <li>
+        <a href="{{ book.get_absolute_url }}">{{ book.author }}</a>
+       <a href="{{book.summary}}">{{book.title}}</a>
+      </li>
+
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}

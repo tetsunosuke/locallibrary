@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+<img src="{% static 'images/images.jpg' %}" alt="mu">
+  <hr>
+  <h1>Books category</h1>
+  <table><em>
+    <tr><td>Japasease stories</td></tr>
+    <tr><td>Hebrew stories</td></tr>
+    <tr><td>English stories</td></tr>
+  </em></table>
+  <h2>About team hamuster</h2>
+  <p>we usually have language exchange meeting every saturday at 20:00 japan time. lets study and be hamuster! </p>
+  <p>Our concept in our community making strong conecction by studying and helping each othe!r</p>
+  <p>Anybody who is agree with our concept is welcome!!</p>
+  <p>if you know some good books and ideas,please contact me in message! </p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+{% endblock %}

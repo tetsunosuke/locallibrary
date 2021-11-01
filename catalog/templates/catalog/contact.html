@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+ <header>
+   <title>Feel free ask me any questions</title>
+ </header>
+ <body>
+   <form method="post">
+     {% csrf_token %}
+     {{ form.non_field_errors }}
+
+     {% for field in form %}
+       <div>
+         <label for="{{ field.id_for_label }}">
+           {{ field.label_tag }}
+         </label>
+         <div>
+           {{ field }}
+           {{ field.errors }}
+         </div>
+       </div>
+     {% endfor %}
+     <button type="submit">send</button>
+   </form>
+ <body>
+
+{% endblock %}

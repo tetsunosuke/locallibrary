@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+{% load static %}
+  <img src="{% static 'images/R.jpg' %}" alt="mu">
+  <h1>Author List</h1>
+  {% if author_list %}
+  <ul>
+    {% for author in author_list %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author.first_name }}</a> ({{author.last_name}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no authors in the library.</p>
+  {% endif %}
+{% endblock %}
